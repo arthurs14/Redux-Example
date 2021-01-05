@@ -34,8 +34,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addPerson: () => dispatch({ type: 'ADD' }),
-        deletePerson: (id) => dispatch({ type: 'DELETE', id: id })
+        addPerson: (name, age) => dispatch({ type: 'ADD', person: { name: name, age: age } }),
+        deletePerson: (id) => dispatch({ type: 'DELETE', id: id }),
     };
 }
 
