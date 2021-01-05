@@ -3,6 +3,19 @@ import React, { Component } from 'react';
 import './AddPerson.css';
 
 class AddPerson extends Component {
+    state = {
+        name: '',
+        age: null,
+    };
+
+    nameChangedHandler = (ev) => {
+        this.setState({ name: ev.target.value });
+    }
+
+    ageChangedHandler = (ev) => {
+        this.setState({ age: ev.target.value });
+    }
+
     render() {
         const { personAdded } = this.props;
 
