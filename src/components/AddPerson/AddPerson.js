@@ -32,7 +32,7 @@ class AddPerson extends Component {
                     placeholder="Age"
                     onChange={this.ageChangedHandler}
                     value={age} />
-                <button onClick={personAdded}>Add Person</button>
+                <button onClick={() => personAdded(name, age)}>Add Person</button>
             </div>
         );
     }
