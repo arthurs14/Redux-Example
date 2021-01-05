@@ -27,6 +27,7 @@ class Persons extends Component {
     }
 
     render() {
+        const { addPerson } = this.props;
         return (
             <div>
                 <AddPerson personAdded={this.personAddedHandler} />
@@ -43,11 +44,15 @@ class Persons extends Component {
 }
 
 const mapStateToProps = state => {
-
+    return {
+        persons: state.persons,
+    };
 };
 
 const mapDispatchToProps = dispatch => {
-
+    return {
+        addPerson: () => dispatch({ type: 'ADD' }),
+    };
 }
 
-export default connect(Persons);
+export default connect(mapStateToProps, mapDispatchToProps)(Persons);
