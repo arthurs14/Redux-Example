@@ -13,6 +13,12 @@ const reducer = (state = initialState, action) => {
           age: Math.floor(Math.random() * 480),
         }),
       };
+    case 'DELETE':
+      let updatedArr = state.persons.filter(person => person.id !== action.id);
+      return {
+        ...state,
+        persons: updatedArr,
+      };
     default:
       return state;
   }
