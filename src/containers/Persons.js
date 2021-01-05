@@ -9,12 +9,6 @@ class Persons extends Component {
         persons: []
     }
 
-    personDeletedHandler = (personId) => {
-        this.setState((prevState) => {
-            return { persons: prevState.persons.filter(person => person.id !== personId) }
-        });
-    }
-
     render() {
         const { persons, addPerson, deletePerson } = this.props;
         return (
